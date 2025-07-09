@@ -116,25 +116,25 @@ function MapDisplay() {
   );
 
   // Expand (Station List for NSCR projects)
-  const stationListExpand = document.querySelector("#stationlist-expand");
-  const [stationListPanelExpanded, setStationListPanelExpanded] =
-    useState(false);
+  // const stationListExpand = document.querySelector("#stationlist-expand");
+  // const [stationListPanelExpanded, setStationListPanelExpanded] =
+  //   useState(false);
 
-  reactiveUtils.when(
-    () => stationListExpand?.expanded === false,
-    () => setStationListPanelExpanded(false)
-  );
+  // reactiveUtils.when(
+  //   () => stationListExpand?.expanded === false,
+  //   () => setStationListPanelExpanded(false)
+  // );
 
-  reactiveUtils.when(
-    () => stationListExpand?.expanded === true,
-    () => setStationListPanelExpanded(true)
-  );
+  // reactiveUtils.when(
+  //   () => stationListExpand?.expanded === true,
+  //   () => setStationListPanelExpanded(true)
+  // );
 
   useEffect(() => {
     if (mapView) {
       // Add layers and widgets
       arcgisMap.view.ui.add(arcgisExpand, "top-right");
-      arcgisMap.view.ui.add(stationListExpand, "bottom-right");
+      // arcgisMap.view.ui.add(stationListExpand, "bottom-right");
       arcgisMap.view.ui.add(arcgisLaunch, "top-left");
 
       arcgisMap.map.add(n1CenterlineLayer);
@@ -369,13 +369,13 @@ function MapDisplay() {
       ></CalciteButton>
 
       {/* Station List */}
-      <arcgis-expand
+      {/* <arcgis-expand
         position="bottom-right"
         expandedIcon="list-number"
         id="stationlist-expand"
       >
         <StationList id={stationListPanelExpanded} />
-      </arcgis-expand>
+      </arcgis-expand> */}
 
       {/* Action Panel */}
       <arcgis-expand

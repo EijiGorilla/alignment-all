@@ -73,7 +73,7 @@ export function lastDateOfMonth(date: any) {
   const year = old_date.getFullYear();
   const month = old_date.getMonth() + 1;
   const day = old_date.getDate();
-  const final_date = `${year}-${month}-${day}`;
+  const final_date = `${month} ${year}`;
 
   return final_date;
 }

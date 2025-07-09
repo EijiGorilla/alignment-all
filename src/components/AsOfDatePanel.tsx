@@ -1,4 +1,15 @@
+import { useEffect, useState } from "react";
+import { dateUpdate } from "../Query";
+import { updatedDateCategoryNames } from "../UniqueValues";
+
 function AsOfDatePanel() {
+  const [asOfDate, setAsOfDate] = useState<undefined | any | unknown>(null);
+
+  useEffect(() => {
+    dateUpdate(updatedDateCategoryNames).then((response: any) => {
+      setAsOfDate(response[0][0]);
+    });
+  }, []);
   return (
     <>
       <div
@@ -14,7 +25,7 @@ function AsOfDatePanel() {
           left: "20px",
         }}
       >
-        As of June 2025
+        As of {asOfDate}
       </div>
     </>
   );
