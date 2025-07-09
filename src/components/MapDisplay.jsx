@@ -86,6 +86,7 @@ import {
 } from "../Query";
 import { MyContext } from "../App";
 import StationList from "./StationList";
+import { CalciteButton } from "@esri/calcite-components-react";
 
 function MapDisplay() {
   const { categorynames, projectnames } = use(MyContext);
@@ -93,6 +94,9 @@ function MapDisplay() {
   // Main Map
   const [mapView, setMapView] = useState();
   const arcgisMap = document.querySelector("#arcgis-map");
+
+  // Launuch
+  const arcgisLaunch = document.querySelector("#launch-button");
 
   // Legend
   const arcgisLegend = document.querySelector("#mmsp-centerline-construction");
@@ -131,6 +135,7 @@ function MapDisplay() {
       // Add layers and widgets
       arcgisMap.view.ui.add(arcgisExpand, "top-right");
       arcgisMap.view.ui.add(stationListExpand, "bottom-right");
+      arcgisMap.view.ui.add(arcgisLaunch, "top-left");
 
       arcgisMap.map.add(n1CenterlineLayer);
       arcgisMap.map.add(n1CenterlineConstruction);
@@ -352,6 +357,16 @@ function MapDisplay() {
       <arcgis-expand position="top-left" expandedIcon="print" id="print-expand">
         <arcgis-print position="top-left"></arcgis-print>
       </arcgis-expand>
+
+      {/* Launch button*/}
+      <CalciteButton
+        id="launch-button"
+        href="https://eijigorilla.github.io/alignment_all"
+        icon-end="launch"
+        scale="s"
+        label="Open in a new tab"
+        target="_blank"
+      ></CalciteButton>
 
       {/* Station List */}
       <arcgis-expand
