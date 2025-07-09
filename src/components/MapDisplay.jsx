@@ -361,7 +361,7 @@ function MapDisplay() {
       {/* Launch button*/}
       <CalciteButton
         id="launch-button"
-        href="https://eijigorilla.github.io/alignment_all"
+        href="https://gis.railway-sector.com/portal/apps/experiencebuilder/experience/?id=8d2c547125db4c11ab1e1f3ce085dcd7"
         icon-end="launch"
         scale="s"
         label="Open in a new tab"
