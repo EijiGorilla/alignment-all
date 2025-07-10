@@ -383,8 +383,11 @@ function MapDisplay() {
         mode="floating"
         id="actionpanel-expand"
         expanded
+        close-on-sec
       >
-        <ActionPanel id={actionPanelExpanded} />
+        <arcgis-placement>
+          <ActionPanel id={actionPanelExpanded} />
+        </arcgis-placement>
       </arcgis-expand>
 
       {/* Legend widget */}
@@ -414,7 +417,7 @@ function MapDisplay() {
           borderColor: "grey",
           borderWidth: "0.5px",
           overflow: "hidden",
-          top: actionPanelExpanded === false ? "50px" : "240px",
+          top: actionPanelExpanded === false ? "60px" : "200px",
           right: "40px",
         }}
         id="arcgis-overview-map"
